@@ -57,11 +57,12 @@ export class ExpenseTracker {
 
     deleteExpense(id) {
         const foundIndex = this.#Expenses.findIndex((expense) => {
-            expense.id === id;
+            return (expense.id === id);
         });
 
         if(foundIndex > -1) {
             this.#Expenses.splice(foundIndex, 1);
+            console.log(`Expense with id: ${id} has been deleted`);
         }
         else {
             console.log(`Expense with id: ${id} does not exist`);
