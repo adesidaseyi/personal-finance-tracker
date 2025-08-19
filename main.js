@@ -14,6 +14,6 @@ myExpenseTracker.listExpenses();
 
 myExpenseTracker.getTotalExpenses();
 
-//myExpenseTracker.filterExpenses("Food");
+myExpenseTracker.filterExpenses("Food");
 
-//myExpenseTracker.formatAmount().listExpenses();
+myExpenseTracker.formatAmount();

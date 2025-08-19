@@ -49,7 +49,7 @@ export class ExpenseTracker {
 
     filterExpenses(category) {
         const filteredByCategory = this.#Expenses.filter((expense) => {
-            expense.category == category;
+            return (expense.category == category);
         });
         
         this.listExpenses(filteredByCategory);
@@ -90,11 +90,15 @@ export class ExpenseTracker {
         }
     }
 */
-    formatAmount() {
+    formatAmount() {    //Format the amounts with commas (e.g., 10,000 instead of 10000).
         const formattedExpenses = this.#Expenses.map((expense) => {
-            expense.amount = expense.amount.toLocaleString()
+            const formattedExpense = {
+                ...expense,
+                amount: expense.amount.toLocaleString(),
+            }
+            return formattedExpense;
         });
         this.listExpenses(formattedExpenses);
-    } //Format the amounts with commas (e.g., 10,000 instead of 10000).
+    }
 
 }
